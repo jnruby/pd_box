@@ -1,4 +1,4 @@
-#N canvas 0 22 450 300 10;
+#N canvas 0 22 865 658 10;
 #X obj 37 64 lop~ 70;
 #X obj 37 119 peakamp~ 15;
 #X obj 37 29 adc~;
@@ -31,7 +31,7 @@ to show you what the baseline level is when the pedal is down;
 is closed \, otherwise it is passed to the expression;
 #X obj 97 503 expr $i1 \; if ($i1 > $i2 \, 2 \, 0);
 #X obj 254 515 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 70 256;
 #X text 313 513 threshold (default 70);
 #X obj 361 496 loadbang;
 #X msg 316 496 70;
@@ -83,6 +83,10 @@ is closed \, otherwise it is passed to the expression;
 #X restore 51 670 pd trigger;
 #X text 128 671 check out this trigger patch for various options \,
 delays \, etc.;
+#X text 471 24 This patch uses an analog (keyboard-type) pedal to create
+bang triggers in PD \, useful for triggering events \, etc. with a
+simple pedal. Pedal is connected to input of adc and creates noise
+which is used to trigger;
 #X connect 0 0 1 0;
 #X connect 1 0 18 0;
 #X connect 2 0 0 0;
